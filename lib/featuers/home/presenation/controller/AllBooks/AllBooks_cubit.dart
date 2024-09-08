@@ -7,7 +7,7 @@ class AllbooksCubit extends Cubit<AllbooksState> {
   final HomeRepo homeRepo;
   getAllbooks() async {
     emit(lodingstate());
-    var result = await homeRepo.featchAllBooks();
+    var result = await homeRepo.fetchAllBooks();
     result.fold((error) {
       emit(errorstate(error.toString()));
     }, (books) {
