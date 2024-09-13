@@ -1,10 +1,7 @@
-import 'package:booklyapp/featuers/home/presenation/views/wigets/body3.dart';
 import 'package:booklyapp/featuers/home/presenation/views/wigets/body3_widgets/details_widget.dart';
 import 'package:booklyapp/featuers/home/presenation/views/wigets/body3_widgets/image_widget.dart';
 import 'package:booklyapp/featuers/home/presenation/views/wigets/body3_widgets/scroll_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:booklyapp/featuers/home/presenation/views/wigets/body_2.dart';
-import 'package:booklyapp/featuers/home/presenation/views/wigets/widget_2.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class screen3 extends StatelessWidget {

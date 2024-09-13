@@ -3,11 +3,12 @@ import 'package:booklyapp/featuers/home/presenation/controller/AllBooks/AllBooks
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AllbooksCubit extends Cubit<AllbooksState> {
-  AllbooksCubit(super.initialState, this.homeRepo);
+  AllbooksCubit(this.homeRepo) : super(intialstate());
   final HomeRepo homeRepo;
+
   getAllbooks() async {
     emit(lodingstate());
-    var result = await homeRepo.fetchAllBooks();
+      var result = await homeRepo.fetchAllBooks();
     result.fold((error) {
       emit(errorstate(error.toString()));
     }, (books) {

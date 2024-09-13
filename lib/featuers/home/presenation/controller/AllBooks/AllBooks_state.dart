@@ -7,7 +7,7 @@ class intialstate extends AllbooksState {}
 class lodingstate extends AllbooksState {}
 
 class successstate extends AllbooksState {
-  final List<Books> books;
+  final List books;
 
   successstate(this.books);
 }

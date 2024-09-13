@@ -1,6 +1,7 @@
 import 'package:booklyapp/featuers/home/presenation/views/wigets/appbar1.dart';
-import 'package:booklyapp/featuers/home/presenation/views/wigets/body_2.dart';
-import 'package:booklyapp/featuers/home/presenation/views/wigets/widget_2.dart';
+import 'package:booklyapp/featuers/home/presenation/views/wigets/screen2_widgets/blocbuilder.dart';
+
+
 
 import 'package:flutter/material.dart';
 
@@ -15,27 +16,6 @@ class screen_2 extends StatelessWidget {
           backgroundColor: const Color(0xFF100B20),
           title: const appbar1(),
         ),
-        body: CustomScrollView(
-          slivers: [
-            const SliverToBoxAdapter(
-              child: SizedBox(height: 250, child: body_2()),
-            ),
-            const SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Text(
-                  "Best Seller",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: widget_2(),
-            )
-          ],
-        ));
+        body: Blocbuilder() );
   }
 }
