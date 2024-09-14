@@ -1,8 +1,5 @@
-import 'package:booklyapp/featuers/home/presenation/views/wigets/appbar1.dart';
-import 'package:booklyapp/featuers/home/presenation/views/wigets/screen2_widgets/blocbuilder.dart';
-
-
-
+import 'package:booklyapp/featuers/home/presenation/views/widgets/appbar1.dart';
+import 'package:booklyapp/featuers/home/presenation/views/widgets/screen_2widgets/screen2_body.dart';
 import 'package:flutter/material.dart';
 
 class screen_2 extends StatelessWidget {
@@ -11,11 +8,6 @@ class screen_2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFF100B20),
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF100B20),
-          title: const appbar1(),
-        ),
-        body: Blocbuilder() );
+        backgroundColor: const Color(0xFF100B20), body: Screen2Body());
   }
 }

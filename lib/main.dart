@@ -1,8 +1,11 @@
 import 'package:booklyapp/core/network/api_service.dart';
 import 'package:booklyapp/core/network/get_it.dart';
+import 'package:booklyapp/core/utils/app_router.dart';
+import 'package:booklyapp/featuers/home/data/repo/home_repo.dart';
 import 'package:booklyapp/featuers/home/data/repo/home_repo_impl.dart';
 import 'package:booklyapp/featuers/home/presenation/controller/AllBooks/AllBooks_cubit.dart';
 import 'package:booklyapp/featuers/home/presenation/controller/AllBooks/AllBooks_state.dart';
+import 'package:booklyapp/featuers/home/presenation/controller/Bestseller/Bestseller_cubit.dart';
 import 'package:booklyapp/featuers/home/presenation/views/screen_2.dart';
 import 'package:booklyapp/featuers/home/presenation/views/screen_3.dart';
 
@@ -12,7 +15,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  setupLocator();
+  setupserviceLocator();
   runApp(const MyApp());
 }
 
@@ -21,26 +24,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (_, child) {
-        return MultiBlocProvider(
-          providers: [
-            BlocProvider<AllbooksCubit>(
-                create: (context) => AllbooksCubit(getIt.get<HomeRepoImpl>())..getAllbooks()),
-          ],
-          child: MaterialApp(
-              debugShowCheckedModeBanner: false,
-              home: child,
-              routes: {
-                "screen2": (context) => const screen_2(),
-                "screen3": (context) => screen3(),
-              }),
-        );
-      },
-      child: const splash_screen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) =>
+              AllbooksCubit(getIt.get<HomeRepoImpl>())..getFeaturedBooks(),
+        ),
+        BlocProvider(
+            create: (context) =>
+                BestsellerCubit(getIt.get<HomeRepoImpl>())..getBestseller())
+      ],
+      child: MaterialApp.router(
+        routerConfig: Approuter.router,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: Color(0xff100B20),
+        ),
+      ),
     );
   }
 }

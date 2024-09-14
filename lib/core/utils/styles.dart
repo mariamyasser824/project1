@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 
 abstract class Styles {
@@ -19,5 +17,4 @@ abstract class Styles {
     fontSize: 20,
     fontWeight: FontWeight.normal,
   );
-
 }

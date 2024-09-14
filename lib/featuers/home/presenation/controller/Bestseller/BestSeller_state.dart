@@ -1,19 +1,19 @@
-import '../../../data/model/books/books.dart';
+import '../../../data/model/Book/book/book.dart';
 
 abstract class BestsellerState {}
 
-class intialstate1 extends BestsellerState {}
+class Bestsellerintialstate extends BestsellerState {}
 
-class lodingstate1 extends BestsellerState {}
+class Bestsellerlodingstate extends BestsellerState {}
 
-class successstate1 extends BestsellerState {
-  final List<Books> books;
+class Bestsellersuccessstate extends BestsellerState {
+  final List<Book> books;
 
-  successstate1(this.books);
+  Bestsellersuccessstate(this.books);
 }
 
-class errorstate1 extends BestsellerState {
+class Bestsellererrorstate extends BestsellerState {
   final String error;
 
-  errorstate1(this.error);
+  Bestsellererrorstate(this.error);
 }

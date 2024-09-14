@@ -1,4 +1,4 @@
-import '../../../data/model/books/books.dart';
+import 'package:booklyapp/featuers/home/data/model/Book/book/book.dart';
 
 abstract class AllbooksState {}
 
@@ -7,7 +7,7 @@ class intialstate extends AllbooksState {}
 class lodingstate extends AllbooksState {}
 
 class successstate extends AllbooksState {
-  final List<Books> books;
+  final List<Book> books;
 
   successstate(this.books);
 }

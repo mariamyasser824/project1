@@ -1,5 +1,8 @@
 import 'package:booklyapp/featuers/home/presenation/views/screen_2.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../core/utils/app_router.dart';
 
 class splashwidget extends StatefulWidget {
   const splashwidget({super.key});
@@ -28,8 +31,7 @@ class _splashwidgetState extends State<splashwidget>
     animationController.forward();
 
     Future.delayed(const Duration(seconds: 4), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const screen_2()));
+      GoRouter.of(context).push(Approuter.homeViewRoute);
     });
   }
 
@@ -45,14 +47,12 @@ class _splashwidgetState extends State<splashwidget>
         )),
       ),
       SlideTransition(
-        position: b,
-        child: const Center(
-            child: Text(
-          "Read free Books",
-          style: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-        )),
-      )
+          position: b,
+          child: const Text(
+            'Read Free Books',
+            style: TextStyle(fontSize: 20),
+            textAlign: TextAlign.center,
+          )),
     ]);
   }
 }
