@@ -31,7 +31,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
-    bloc: ^8.1.4
+  bloc: ^8.1.4
   dartz: ^0.10.1
   dio: ^5.7.0
   flutter_bloc: ^8.1.6
