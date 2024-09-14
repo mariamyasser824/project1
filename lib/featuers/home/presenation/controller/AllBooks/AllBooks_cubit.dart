@@ -1,3 +1,4 @@
+import 'package:booklyapp/featuers/home/data/model/books/books.dart';
 import 'package:booklyapp/featuers/home/data/repo/home_repo.dart';
 import 'package:booklyapp/featuers/home/presenation/controller/AllBooks/AllBooks_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +13,7 @@ class AllbooksCubit extends Cubit<AllbooksState> {
     result.fold((error) {
       emit(errorstate(error.toString()));
     }, (books) {
-      emit(successstate(books));
+      emit(successstate(books as List<Books>));
     });
   }
 }

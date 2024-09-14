@@ -1,5 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
-
 import 'package:booklyapp/featuers/home/presenation/controller/AllBooks/AllBooks_cubit.dart';
 import 'package:booklyapp/featuers/home/presenation/controller/AllBooks/AllBooks_state.dart';
 import 'package:booklyapp/featuers/home/presenation/views/wigets/screen2_widgets/body_2.dart';
@@ -14,20 +12,20 @@ class Blocbuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AllbooksCubit, AllbooksState>(
       builder: (context, state) {
-       if (state is lodingstate) {
+        AllbooksCubit cubit = BlocProvider.of<AllbooksCubit>(context);
+    
+        if (state is lodingstate) {
           return Center(child: CircularProgressIndicator());
         } else if (state is successstate) {
           return ListView.builder(
             itemCount: state.books.length,
             itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(state.books[index].title),
-                subtitle: Text(state.books[index].author),
-              );
+              return Text(
+                  "${state.books[index].volumeInfo!.authors![index].characters.first}");
             },
           );
         } else if (state is errorstate) {
-          return Center(child: Text('Error: ${state.error}'));
+          return Center(child: Text('Error: ${state.error}',style: TextStyle(color: Colors.white),));
         }
         return Container(); // Fallback for any other state
       },
