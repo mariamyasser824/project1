@@ -15,7 +15,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       Map<String, dynamic> data = await apiService.get(
           endPoint:
-              'v1/volumes?Filtering=free-ebooks&q=subject :flutter&maxResults=40');
+              'v1/volumes?Filtering=free-ebooks&q=subject :&axResults=40');
       List<Book> books = [];
       for (var i in data['items']) {
         books.add(Book.fromJson(i));
@@ -36,7 +36,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       Map<String, dynamic> data = await apiService.get(
           endPoint:
-              'v1/volumes?Filtering=free-ebooks&q=flutter&Sorting&maxResults=40');
+              'v1/volumes?Filtering=free-ebooks&q=subject :&axResults=40&Sorting=Sorting');
       List<Book> books = [];
       for (var i in data['items']) {
         books.add(Book.fromJson(i));

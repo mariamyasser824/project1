@@ -3,7 +3,10 @@ import 'package:booklyapp/featuers/home/presenation/views/screen_3.dart';
 import 'package:booklyapp/featuers/splashscreen/views/splashscreen.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../featuers/home/data/model/Book/book/book.dart';
+
 abstract class Approuter {
+
   static const homeViewRoute = '/homeView';
   static const bookDetailsViewRoute = '/bookDetailsview';
 
@@ -19,7 +22,10 @@ abstract class Approuter {
       ),
       GoRoute(
         path: bookDetailsViewRoute,
-        builder: (context, state) => screen3(),
+        builder: (context, state) {
+          final book = state.extra as Book;
+          return screen3(book: book);
+        },
       ),
     ],
   );

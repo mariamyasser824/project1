@@ -35,10 +35,12 @@ class MyApp extends StatelessWidget {
                 BestsellerCubit(getIt.get<HomeRepoImpl>())..getBestseller())
       ],
       child: MaterialApp.router(
+
         routerConfig: Approuter.router,
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Color(0xff100B20),
+
         ),
       ),
     );

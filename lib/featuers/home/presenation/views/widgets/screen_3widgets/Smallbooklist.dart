@@ -8,9 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../../../../../core/utils/assets.dart';
-import 'BookShape.dart';
-class Allbookslist extends StatelessWidget {
-   Allbookslist({super.key});
+
+class Smallbooklist extends StatelessWidget {
+  Smallbooklist({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class Allbookslist extends StatelessWidget {
           height: MediaQuery
               .of(context)
               .size
-              .height * .3,
+              .height * .14,
           child: ListView.builder(
             itemBuilder: (context, index) {
               return  Padding(

@@ -1,13 +1,15 @@
+import 'package:booklyapp/featuers/home/data/model/Book/book/book.dart';
+import 'package:booklyapp/featuers/home/presenation/views/widgets/screen_3widgets/screen3_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class screen3 extends StatelessWidget {
-  screen3({super.key});
-
+  const  screen3({super.key, required this.book});
+final Book book;
   @override
   Widget build(BuildContext context) {
-    String data = ModalRoute.of(context)!.settings.arguments as String;
+
     return Scaffold(
         backgroundColor: const Color(0xFF100B20),
         appBar: AppBar(
@@ -16,15 +18,7 @@ class screen3 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(
-                    onPressed: () {
-                      GoRouter.of(context).pop();
-                    },
-                    icon: const Icon(
-                      Icons.close,
-                      size: 28,
-                      color: Colors.white,
-                    )),
+
                 IconButton(
                     onPressed: () {},
                     icon: const Icon(
@@ -36,6 +30,6 @@ class screen3 extends StatelessWidget {
             ),
           ],
         ),
-        body: null);
+        body: screen3_Body(book: book,));
   }
 }
